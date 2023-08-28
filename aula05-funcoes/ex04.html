@@ -9,21 +9,21 @@
     <h1>Descobrindo sua nacionalidade</h1>
     Selecione o seu pais: <input type="text" name="pais" id="pais">
     <input type="button" value="Descobrir" onclick="descobrir()">
-    <div id="res">resultado</div>
+    <div id="res"></div>
 
     <script>
 
         function descobrir(){
 
-            var txt = document.getElementById('pais')
+            var txt = document.querySelector('input#pais')
             var res = document.getElementById('res')
+            toString(txt)
 
-            var txt = toString(txt)
-
-
-            res.innerHTML(`Seu pais Atual é ${txt}`)
-            if(txt == 'Brasil'){
-                res.innerText('Você é brasileiro, parabéns')
+            if (txt == 'Brasil' ) {
+                res.innerHTML = (`<p>Seu pais Atual é ${txt}</p>`)
+            } else {
+                res.innerHTML = (`<p>Seu pais atual é ${txt}</p>`)
+                res.innerHTML += (`<p>você é estrangeiro</p>`)
             }
 
         }
